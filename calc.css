@@ -1,0 +1,81 @@
+#calcScreen {
+  grid-area: input;
+}
+#calcScreen2 {
+  grid-area: input2;
+}
+#plus {
+  grid-area: plus;
+}
+#minus {
+  grid-area: minus;
+}
+#multi {
+  grid-area: multi;
+}
+#division {
+  grid-area: division;
+}
+.num {
+  grid-area: number;
+}
+#space {
+  grid-area: space;
+}
+
+#gridContainer {
+  display: grid;
+  width: fit-content;
+  grid-template-columns: 90px 90px 90px 90px;
+  grid-template-rows: 90px 40px 60px 60px 60px 60px 60px;
+  grid-template-areas:
+    "input input input input"
+    "input2 input2 input2 input2"
+    "plus minus multi division"
+    "number number number space"
+    "number number number space"
+    "number number number space"
+    "number number number space";
+  border-radius: 10px;
+  background-color: lightslategray;
+  border: 3px solid black;
+  padding: 10px;
+  height: 430px;
+}
+#gridContainer > input {
+  border-radius: 5px;
+  margin-bottom: 2px;
+  border: 3px solid black;
+}
+#gridContainer > button {
+  text-align: center;
+  font-size: 25px;
+  border: 2px solid black;
+}
+.number,
+#dot,
+#ac {
+  background-color: white;
+}
+#space {
+  background-color: lightskyblue;
+}
+#minus,
+#multi,
+#plus,
+#division {
+  background-color: salmon;
+}
+#calcScreen {
+  position: relative;
+  font-size: 40px;
+  text-align: end;
+  background-color: aliceblue;
+}
+#calcScreen2 {
+  background-color: aliceblue;
+}
+::placeholder {
+  position: relative;
+  right: 10px;
+}
