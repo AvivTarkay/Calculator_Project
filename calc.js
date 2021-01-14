@@ -1,7 +1,5 @@
-
-
-gridContainer.innerHTML  =  `
-<input id="calcScreen" type="text" placeholder="0" disabled>
+gridContainer.innerHTML = `
+<input id="calcScreen" type="text"  disabled>
 <input id="calcScreen2" type="text"  disabled>
 <button id="plus">+</button><button id="minus">-</button>
 <button id="multi" data-action="multiply">*</button> 
@@ -12,41 +10,25 @@ gridContainer.innerHTML  =  `
 <button class="number">2</button><button class="number">3</button>
 <button class="number">0</button><button id="dot">.</button>
 <button id="ac">C</button><button id="space">=</button>   
-` 
-      let btns = document.getElementsByTagName("button");
-      let calculator = document.getElementById("calcScreen");
-      let calculator2 = document.getElementById("calcScreen2");   
-    
-      for (const caclBtn of btns) {
-        caclBtn.addEventListener('click',function() {
-           if (this.innerHTML == "="){
-            calculator.value = eval(calculator.value); 
-          } 
-           else if (this.innerHTML == "C"){
-            calculator.value = "";
-              }
-            else{
-                calculator.value += this.innerHTML;
-             }     
-        })
-        caclBtn.addEventListener("click",btns.onclick=()=>{
-          calculator2.value = eval(calculator.value);
-        })
-      }
-   
+`;
+let btns = document.getElementsByTagName("button");
+let calculator = document.getElementById("calcScreen");
+let calculator2 = document.getElementById("calcScreen2");
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-          
+for (const caclBtn of btns) {
+	caclBtn.addEventListener("click", function () {
+		if (this.innerHTML == "=") {
+			calculator.value = eval(calculator.value);
+		} else if (this.innerHTML == "C") {
+			calculator.value = "";
+		} else {
+			calculator.value += this.innerHTML;
+		}
+	});
+	caclBtn.addEventListener(
+		"click",
+		(btns.onclick = () => {
+			calculator2.value = eval(calculator.value);
+		})
+	);
+}
