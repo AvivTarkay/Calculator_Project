@@ -11,12 +11,12 @@ gridContainer.innerHTML = `
 <button class="number">0</button><button id="dot">.</button>
 <button id="ac">C</button><button id="space">=</button>   
 `;
-let btns = document.getElementsByTagName("button");
+let btn = document.getElementsByTagName("button");
 let calculator = document.getElementById("calcScreen");
 let calculator2 = document.getElementById("calcScreen2");
 
-for (const caclBtn of btns) {
-	caclBtn.addEventListener("click", function () {
+for (const calcBtn of btn) {
+	calcBtn.addEventListener("click", function () {
 		if (this.innerHTML == "=") {
 			calculator.value = eval(calculator.value);
 		} else if (this.innerHTML == "C") {
@@ -25,9 +25,9 @@ for (const caclBtn of btns) {
 			calculator.value += this.innerHTML;
 		}
 	});
-	caclBtn.addEventListener(
+	calcBtn.addEventListener(
 		"click",
-		(btns.onclick = () => {
+		(btn.onclick = () => {
 			calculator2.value = eval(calculator.value);
 		})
 	);
